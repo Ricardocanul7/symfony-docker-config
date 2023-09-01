@@ -15,6 +15,8 @@ services:
       - ./docker/php/config/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
       - .:/var/www/app
       - .composer/cache:/home/www-data/.composer/cache
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     networks:
       - app
 
